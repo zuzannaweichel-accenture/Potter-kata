@@ -2,7 +2,7 @@
 *.class
 .idea
 .MS_Shop
-.gradle/
+.gradle
 build.gradle
 gradle/
 gradlew
