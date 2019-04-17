@@ -1,5 +1,13 @@
 # Compiled class file
 *.class
+.idea
+.MS_Shop
+.gradle/
+build.gradle
+gradle/
+gradlew
+gradlew.bat
+settings.gradle
 
 # Log file
 *.log
