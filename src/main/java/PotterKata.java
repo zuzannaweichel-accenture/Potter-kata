@@ -1,21 +1,21 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class PotterKata {
 
-    static double discount(BOOK[] cart) {
+    private BOOK[] cart;
+    private Map<Integer, Double> discounts = new  HashMap<Integer, Double>(){{
+        put(1, 0.0);
+        put(2, 0.05);
+        put(3, 0.10);
+    }};
+
+
+    double discount(BOOK[] cart) {
+        this.cart = cart;
         double unitPrice = 8.00;
         double total = unitPrice * cart.length;
-        double discount = 0;
-        if (cart.length == 1){
-            return unitPrice;
-        }
-        if (cart.length == 2){
-            discount= total * BUNDLE.twoBooks.getDiscount();
-        }
-        if (cart.length == 3) {
-            discount = total * BUNDLE.threeBooks.getDiscount();
-        }
-        if (cart.length == 4) {
-            discount = total * BUNDLE.fourBooks.getDiscount();
-        }
-        return total - discount;
+        double discountedPrice = total * discounts.get(this.cart.length);
+        return total - discountedPrice;
     }
 }
